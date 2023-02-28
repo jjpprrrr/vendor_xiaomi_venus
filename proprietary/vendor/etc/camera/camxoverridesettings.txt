@@ -1,5 +1,7 @@
 multiCameraLogicalXMLFile=venus.xml
-
+multiCameraHWSyncMask=0x1
+multiCameraSWFrameSyncInterval=0
+multiCameraExposureTimeMatch=FALSE
 #Camera log
 logInfoMask=0
 logVerboseMask=0
@@ -15,10 +17,6 @@ traceGroupsEnable=0
 enable3ADebugData=FALSE
 enableTuningMetadata=FALSE
 raiserecoverysigabrt=FALSE
-
-multiCameraHWSyncMask=0x1
-multiCameraSWFrameSyncInterval=0
-multiCameraExposureTimeMatch=FALSE
 MPMSizeThresToDisableDelayedUnmap=0
 MPMForceDisableDelayedUnmap=TRUE
 pdafHWEnable=TRUE
@@ -83,3 +81,39 @@ miIfeBandwidthBoostCount=1
 #disableReleaseSensorCache=TRUE
 miIfeBandwidthMultiplier=3.0
 isNightYuvReprocSupported=TRUE
+enableBLMClient=1
+
+#Bit Mask Of HighQualityQuickShot Support
+#Bit[0]       - Support MFSR/LLS in SAT mode
+#Bit[1]       - Support HDR in SAT mode
+#Bit[2]       - Support SR in SAT mode
+#Bit[3]       - Support SuperNightSE in SAT mode
+#Bit[4~7]     - reserve
+#Bit[8]       - Support Bokeh MFNR in Back Camera
+#Bit[9]       - Support Bokeh HDR in Back Camera
+#Bit[10]      - Support MFNR in Front Camera
+#Bit[11]      - Support HDR in Front Camera
+#Bit[12]      - Support Bokeh in Front Camera
+#Bit[13]      - Support  Macro Mode
+#Bit[14~15]   - reserve
+#Bit[16~19]   - HighQualityQuickShot queue length(max number of HighQualityQuickShot)
+#Bit[20]      - Support reuse RDI buffer or not
+# Bit[21]      - Support Limit MFNR input frames or not
+# Bit[22]      - Support quickshot and HightQualityQuickShot mixed use.
+# Bit[23~31]   - reserve
+HighQualityQuickShotSupportMask=0x30003
+
+# Bit Mask for HighQualityQuickShotDelayTime configure
+# Bit[0 ~ 3]   - DelayTime XX * 100 ms of Bokeh MFNR in Back Camera
+# Bit[4 ~ 7]   - DelayTime XX * 100 ms of Bokeh MFNR in Front Camera
+# Bit[8 ~ 11]  - DelayTime XX * 100 ms of Back Normal Capture
+# Bit[12 ~ 15] - DelayTime XX * 100 ms of HDR in Front Camera
+# Bit[16 ~ 19] - DelayTime XX * 100 ms of HDR in Back Camera
+# Bit[20 ~ 23] - DelayTime XX * 100 ms of SuperNightSe in Back Camera
+# Bit[24 ~ 27] - DelayTime XX * 100 ms of SR in Back Camera
+# Bit[28 ~ 31] - DelayTime XX * 100 ms of Front Normal Capture
+# Bit[32 ~ 35] - DelayTime XX * 100 ms of MacroMode in Back Camera
+# Bit[36 ~ 39] - DelayTime XX * 100 ms of Bokeh HDR in Back Camera
+# Bit[40 ~ 43] - DelayTime XX * 100 ms of FACE BEAUTY in Back Camera
+# Bit[44 ~ 63] - reserv
+QuickShotDelayTimeMask=0x50000060300
